@@ -1,2 +1,5 @@
-# Piro25_PythonGame_5
-피로그래밍 파이썬 술게임 만들기 5조입니다.
+- 실행 방법: python main.py
+- 파일 구조
+- 각자 play_game(players) 함수로 만들기!!!!!!
+- players 데이터 설명
+- 브랜치 작업 방식
