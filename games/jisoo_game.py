@@ -177,7 +177,7 @@ def play_game(players):
     else:
         count_number = choose_count_number_by_computer(start_player)
 
-        loser_name = find_loser(start_player, count_number, pointing_map)
+    loser_name = find_loser(start_player, count_number, pointing_map)
 
     print_title("결과 발표")
     print(f"걸린 사람은 바로... {loser_name}님입니다!")
