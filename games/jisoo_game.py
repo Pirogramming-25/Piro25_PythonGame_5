@@ -155,6 +155,12 @@ def add_drink_to_loser(players, loser_name):
     return players
 
 def play_game(players):
+    if len(players) < 3:
+        print("더 게임 오브 데스는 최소 3명 이상이어야 진행할 수 있습니다.")
+        print("현재 참가자가 2명이므로 이 게임은 진행할 수 없습니다.")
+        print("다른 게임을 선택해주세요!")
+        return players
+
     print("신난다~ 재미난다~ 더 게임 오브 데스!")
     print("각자 한 명을 지목하고, 숫자만큼 지목 방향을 따라갑니다.")
     print("마지막에 도착한 사람이 술을 마십니다!")
