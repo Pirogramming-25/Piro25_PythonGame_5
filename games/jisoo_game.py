@@ -101,9 +101,17 @@ def choose_start_player(player_names):
         print("잘못된 입력입니다. 번호를 다시 입력해주세요.")
 
 
-def choose_count_number():
+def is_user_player(player_name, players):
+    for player in players:
+        if player["name"] == player_name:
+            return player["is_user"]
+
+    return False
+
+
+def choose_count_number_by_user():
     while True:
-        count = input("\n몇 번 이동할까요? 숫자를 입력하세요: ").strip()
+        count = input("\n당신이 술래입니다! 몇 번 이동할까요? 숫자를 입력하세요: ").strip()
 
         if count.isdigit():
             count = int(count)
@@ -112,6 +120,15 @@ def choose_count_number():
                 return count
 
         print("1 이상의 숫자를 입력해주세요.")
+
+
+def choose_count_number_by_computer(start_player):
+    count = random.randint(5, 30)
+    print(f"\n{start_player}님이 술래입니다.")
+    print(f"컴퓨터가 이동 숫자를 정하는 중입니다...")
+    print(f"선택된 숫자는 {count}입니다!")
+
+    return count
 
 
 def find_loser(start_player, count_number, pointing_map):
@@ -148,9 +165,13 @@ def play_game(players):
     show_pointing_result(pointing_map)
 
     start_player = choose_start_player(player_names)
-    count_number = choose_count_number()
 
-    loser_name = find_loser(start_player, count_number, pointing_map)
+    if is_user_player(start_player, players):
+        count_number = choose_count_number_by_user()
+    else:
+        count_number = choose_count_number_by_computer(start_player)
+
+        loser_name = find_loser(start_player, count_number, pointing_map)
 
     print_title("결과 발표")
     print(f"걸린 사람은 바로... {loser_name}님입니다!")
