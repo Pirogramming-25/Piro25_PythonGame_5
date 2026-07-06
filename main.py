@@ -25,9 +25,9 @@ COMPUTER_CANDIDATES = [
 ]
 
 GAME_LIST = [
-    ("지수의 게임", jisoo_game.play_game),
-    ("연우의 소수파 술자리 밸런스 게임", yeonwoo_game.play_game),
-    ("예원의 취중 베스킨라빈스 31게임", yewon_game.play_game),
+    ("지수의 게임: 더 게임 오브 데스", jisoo_game.play_game),
+    ("연우의 게임: 소수파 술자리 밸런스 점수 게임", yeonwoo_game.play_game),
+    ("예원의 게임: 베스킨라빈스 31", yewon_game.play_game),
 ]
 
 
