@@ -1,6 +1,5 @@
 import random
 
-
 def show_players(players):
     print("\n현재 참가자 상태")
     print("-" * 35)
@@ -27,9 +26,9 @@ def get_user_count(current_number):
         print("잘못 입력했습니다. 1, 2, 3 중 하나만 입력해주세요.")
 
 
-def play_game(players):
+def play_game3(players):
     print("\n" + "=" * 40)
-    print("🍦 취중 베스킨라빈스 31 게임 시작!")
+    print("취중 베스킨라빈스 31 게임 시작!")
     print("=" * 40)
     print("자기 차례마다 숫자를 1개, 2개, 3개까지 말할 수 있습니다.")
     print("31을 말하는 사람이 벌주를 마십니다.")
@@ -44,7 +43,7 @@ def play_game(players):
         print(f"\n{player['name']}님의 차례입니다.")
         print(f"현재 숫자 : {current_number}")
 
-        if turn % len(players) == 0:
+        if player["is_user"]:
             count = get_user_count(current_number)
         else:
             count = random.randint(1, 3)
